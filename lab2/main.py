@@ -40,11 +40,11 @@ def compute_plot(X):
   fast_compression_array = compression.range_fast(X)
   #compression
   pyplot.subplot(3, 2, 5)
-  pyplot.plot(X, fast_compression_array, "b-s")
+  pyplot.plot(X, regular_compression_array, "b-s")
   pyplot.title("Fast compression")
   #correlation
   pyplot.subplot(3, 2, 6)
-  pyplot.plot(X, fast_correlation_array, "c-s")
+  pyplot.plot(X, regular_correlation_array, "c-s")
   pyplot.title("Fast correlation")
   
 #preparing Real part of complex numbers
