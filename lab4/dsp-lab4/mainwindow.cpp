@@ -19,8 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     action1Widget = new RobertsFilter();
 
     QTabWidget *tabWidget = new QTabWidget();
-    tabWidget->addTab(action0Widget, "Part 1");
-    tabWidget->addTab(action1Widget, "Part 2");
+    tabWidget->addTab(action0Widget, "Correction");
+    tabWidget->addTab(action1Widget, "Filter");
 
     connect( ImageContainer::getInstance(), SIGNAL(loaded(QPixmap*)), action0Widget, SLOT(loadSourceImage(QPixmap*)));
     connect( ImageContainer::getInstance(), SIGNAL(loaded(QPixmap*)), action1Widget, SLOT(loadSourceImage(QPixmap*)));

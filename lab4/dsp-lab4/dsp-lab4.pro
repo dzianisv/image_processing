@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     imagecontainer.cpp \
     qcustomplot.cpp \
     logarithmcorrection.cpp \
-    robertsfilter.cpp
+    robertsfilter.cpp \
+    histogramwidget.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -26,7 +27,8 @@ HEADERS  += mainwindow.h \
     imagecontainer.h \
     qcustomplot.h \
     logarithmcorrection.h \
-    robertsfilter.h
+    robertsfilter.h \
+    histogramwidget.h
 
 FORMS    += mainwindow.ui \
                      imageactionwidget.ui

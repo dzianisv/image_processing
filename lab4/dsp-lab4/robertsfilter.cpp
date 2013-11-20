@@ -27,6 +27,7 @@ QImage RobertsFilter::roberts(const QPixmap &srcPixmap)
         }
         setProgress( x );
     }
+    dstImage.invertPixels();
     return dstImage;
 }
 

@@ -33,11 +33,14 @@ void ImageActionWidget::loadDestinationImage(QPixmap *pixmap)
 {
 
     this->ui->destinationImageWidget->setPixmap(*pixmap);
+    this->ui->destinationHistogramWidget->computeForImage(pixmap->toImage());
 }
+
 
 void ImageActionWidget::loadDestinationImage(QImage image)
 {
     this->ui->destinationImageWidget->setPixmap(QPixmap::fromImage(image));
+    this->ui->destinationHistogramWidget->computeForImage(image);
 }
 
 void ImageActionWidget::setProgress(int p)
@@ -53,4 +56,5 @@ void ImageActionWidget::setProgressMax(int v)
 void ImageActionWidget::loadSourceImage(QPixmap *pixmap)
 {
     this->ui->sourceImageWidget->setPixmap(*pixmap);
+     this->ui->sourceHistogramWidget->computeForImage(pixmap->toImage());
 }
