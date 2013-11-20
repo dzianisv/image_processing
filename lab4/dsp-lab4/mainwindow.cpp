@@ -6,7 +6,7 @@
 #include <QDir>
 
 #include "imagecontainer.h"
-#include "logarithmcorrection.h"
+#include "logfilter.h".h"
 #include "robertsfilter.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    action0Widget = new LogarithmCorrection();
+    action0Widget = new logfilter();
     action1Widget = new RobertsFilter();
 
     QTabWidget *tabWidget = new QTabWidget();

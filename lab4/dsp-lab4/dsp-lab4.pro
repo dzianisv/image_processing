@@ -17,18 +17,18 @@ SOURCES += main.cpp\
         imageactionwidget.cpp \
     imagecontainer.cpp \
     qcustomplot.cpp \
-    logarithmcorrection.cpp \
     robertsfilter.cpp \
-    histogramwidget.cpp
+    histogramwidget.cpp \
+    logfilter.cpp
 
 
 HEADERS  += mainwindow.h \
                             imageactionwidget.h \
     imagecontainer.h \
     qcustomplot.h \
-    logarithmcorrection.h \
     robertsfilter.h \
-    histogramwidget.h
+    histogramwidget.h \
+    logfilter.h
 
 FORMS    += mainwindow.ui \
                      imageactionwidget.ui
