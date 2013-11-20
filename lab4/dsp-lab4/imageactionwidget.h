@@ -23,7 +23,9 @@ protected:
 public slots:
     void loadSourceImage(QPixmap* pixmap);
     void loadDestinationImage(QPixmap* pixmap);
+    void loadDestinationImage(QImage);
     void setProgress(int);
+    void setProgressMax(int);
     virtual void apply();
 
 signals:

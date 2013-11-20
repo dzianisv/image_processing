@@ -35,9 +35,19 @@ void ImageActionWidget::loadDestinationImage(QPixmap *pixmap)
     this->ui->destinationImageWidget->setPixmap(*pixmap);
 }
 
+void ImageActionWidget::loadDestinationImage(QImage image)
+{
+    this->ui->destinationImageWidget->setPixmap(QPixmap::fromImage(image));
+}
+
 void ImageActionWidget::setProgress(int p)
 {
     ui->progressBar->setValue(p);
+}
+
+void ImageActionWidget::setProgressMax(int v)
+{
+    ui->progressBar->setMaximum(v);
 }
 
 void ImageActionWidget::loadSourceImage(QPixmap *pixmap)
