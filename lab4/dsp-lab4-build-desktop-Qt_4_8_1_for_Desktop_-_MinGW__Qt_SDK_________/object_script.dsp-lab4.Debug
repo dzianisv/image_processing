@@ -1,0 +1,17 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\imageactionwidget.o
+./debug\imagecontainer.o
+./debug\qcustomplot.o
+./debug\robertsfilter.o
+./debug\histogramwidget.o
+./debug\logfilter.o
+./debug\moc_mainwindow.o
+./debug\moc_imageactionwidget.o
+./debug\moc_imagecontainer.o
+./debug\moc_qcustomplot.o
+./debug\moc_robertsfilter.o
+./debug\moc_histogramwidget.o
+./debug\moc_logfilter.o
+);

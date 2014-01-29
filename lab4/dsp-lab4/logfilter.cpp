@@ -14,7 +14,7 @@ QImage logfilter::logcorrect(const QPixmap &srcPixmap)
 
     for(int x=0; x<dstImage.width(); x++) {
         for( int y=0; y<dstImage.height(); y++) {
-            QRgb pixel = logcorrect(srcImage.pixel(x, y), c);
+            QRgb pixel = logcorrect(srcImage.pixel(x, y), 700);
             dstImage.setPixel(x, y, pixel);
         }
         setProgress( x );
@@ -30,7 +30,20 @@ void logfilter::apply()
 
 QRgb logfilter::logcorrect(QRgb xy, int c)
 {
+    int r, g, b;
     QColor src(xy);
-    QColor dst(c*qLn(1+src.red()), c*qLn(1+src.green()), c*qLn(1+src.blue()));
+    if(src.red()+src.green()+src.blue() >= c)
+    {
+        r = 0xFF;
+        g = 0xFF;
+        b = 0xFF;
+    }
+    else
+    {
+        r = 0;
+        g = 0;
+        b = 0;
+    }
+    QColor dst(r, g, b);
     return dst.rgb();
 }
