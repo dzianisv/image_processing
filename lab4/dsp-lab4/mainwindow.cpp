@@ -5,7 +5,7 @@
 #include <QString>
 #include <QDir>
 
-#include "imagecontainer.h"
+#include <imagecontainer.h>
 #include "logfilter.h".h"
 #include "robertsfilter.h"
 
@@ -16,17 +16,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     action0Widget = new logfilter();
-    action1Widget = new RobertsFilter();
-
-    QTabWidget *tabWidget = new QTabWidget();
-    tabWidget->addTab(action0Widget, "Correction");
-    tabWidget->addTab(action1Widget, "Filter");
-
-    connect( ImageContainer::getInstance(), SIGNAL(loaded(QPixmap*)), action0Widget, SLOT(loadSourceImage(QPixmap*)));
-    connect( ImageContainer::getInstance(), SIGNAL(loaded(QPixmap*)), action1Widget, SLOT(loadSourceImage(QPixmap*)));
     connect(this->ui->actionOpen, SIGNAL(triggered()), this, SLOT(openImage()));
+    connect( ImageContainer::getInstance(), SIGNAL(loaded(QPixmap*)),
+            (action0Widget->imageWidgets), SLOT(setPixmap(QPixmap*)) );
 
-    this->setCentralWidget(tabWidget);
+    this->setCentralWidget(action0Widget);
 }
 
 MainWindow::~MainWindow()

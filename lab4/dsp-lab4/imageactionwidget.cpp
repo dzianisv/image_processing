@@ -1,27 +1,25 @@
 #include "imageactionwidget.h"
 #include "ui_imageactionwidget.h"
+#define IMAGE_COUNT 3
 
 ImageActionWidget::ImageActionWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ImageActionWidget)
 {
     ui->setupUi(this);
+   imageWidgets = new ImageWidget[IMAGE_COUNT];
+
+    for(int i=0; i<IMAGE_COUNT; i++)
+    {
+        ui->widgetLayout->addWidget(&imageWidgets[i]);
+    }
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(apply()));
 }
 
 ImageActionWidget::~ImageActionWidget()
 {
     delete ui;
-}
-
-const QPixmap *ImageActionWidget::sourcePixmap()
-{
-    return  ( this->ui->sourceImageWidget->pixmap() );
-}
-
-const QPixmap *ImageActionWidget::destinationPixmap()
-{
-    return ( this->ui->destinationImageWidget->pixmap());
+    delete imageWidgets;
 }
 
 void ImageActionWidget::apply()
@@ -29,19 +27,11 @@ void ImageActionWidget::apply()
     emit finished();
 }
 
-void ImageActionWidget::loadDestinationImage(QPixmap *pixmap)
+ImageWidget *ImageActionWidget::getImageWidget(int index)
 {
-
-    this->ui->destinationImageWidget->setPixmap(*pixmap);
-    this->ui->destinationHistogramWidget->computeForImage(pixmap->toImage());
+ return &imageWidgets[index];
 }
 
-
-void ImageActionWidget::loadDestinationImage(QImage image)
-{
-    this->ui->destinationImageWidget->setPixmap(QPixmap::fromImage(image));
-    this->ui->destinationHistogramWidget->computeForImage(image);
-}
 
 void ImageActionWidget::setProgress(int p)
 {
@@ -53,8 +43,3 @@ void ImageActionWidget::setProgressMax(int v)
     ui->progressBar->setMaximum(v);
 }
 
-void ImageActionWidget::loadSourceImage(QPixmap *pixmap)
-{
-    this->ui->sourceImageWidget->setPixmap(*pixmap);
-     this->ui->sourceHistogramWidget->computeForImage(pixmap->toImage());
-}

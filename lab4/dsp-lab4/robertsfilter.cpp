@@ -1,6 +1,6 @@
 #include "robertsfilter.h"
 #include <cmath>
-
+#incl
 RobertsFilter::RobertsFilter()
 {
 }
@@ -33,7 +33,7 @@ QImage RobertsFilter::roberts(const QPixmap &srcPixmap)
 
 void RobertsFilter::apply()
 {
-    QImage filteredImage = roberts(*sourcePixmap());
+    QImage filteredImage = roberts(Ima);
     loadDestinationImage(filteredImage);
 }
 

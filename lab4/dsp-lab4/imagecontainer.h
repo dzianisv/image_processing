@@ -19,6 +19,7 @@ private:
     QPixmap sourcePixmap;
 signals:
     void loaded(QPixmap* pixmap);
+    void imageLoaded(QImage image);
 };
 
 #endif // IMAGECONTAINER_H

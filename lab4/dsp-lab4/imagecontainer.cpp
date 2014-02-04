@@ -15,6 +15,7 @@ void ImageContainer::load(QString path)
 {
     sourcePixmap.load(path);
     emit loaded(&sourcePixmap);
+    emit imageLoaded( sourcePixmap.toImage() );
 }
 
 QPixmap* ImageContainer::getPixmap()

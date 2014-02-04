@@ -15,20 +15,30 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
         imageactionwidget.cpp \
-    imagecontainer.cpp \
     qcustomplot.cpp \
-    robertsfilter.cpp \
     histogramwidget.cpp \
-    logfilter.cpp
+    logfilter.cpp \
+    imagewidget.cpp \
+    imagecontainer.cpp \
+    baseparametr.cpp \
+    parametrsquare.cpp \
+    parameterexist.cpp \
+    parametrmasscenter.cpp
 
 
 HEADERS  += mainwindow.h \
                             imageactionwidget.h \
-    imagecontainer.h \
     qcustomplot.h \
-    robertsfilter.h \
     histogramwidget.h \
-    logfilter.h
+    logfilter.h \
+    imagewidget.h \
+    imagecontainer.h \
+    baseparametr.h \
+    label.h \
+    parametrsquare.h \
+    parameterexist.h \
+    parametrmasscenter.h
 
 FORMS    += mainwindow.ui \
-                     imageactionwidget.ui
+                     imageactionwidget.ui \
+    imagewidget.ui

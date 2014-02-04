@@ -2,6 +2,7 @@
 #define IMAGEACTIONWIDGET_H
 
 #include <QWidget>
+#include <imagewidget.h>
 
 namespace Ui {
 class ImageActionWidget;
@@ -14,20 +15,16 @@ class ImageActionWidget : public QWidget
 public:
     explicit ImageActionWidget(QWidget *parent = 0);
     ~ImageActionWidget();
-    const QPixmap *sourcePixmap();
-    const QPixmap *destinationPixmap();
+    ImageWidget* imageWidgets;
 
 protected:
-    Ui::ImageActionWidget *ui;
+        Ui::ImageActionWidget *ui;
 
 public slots:
-    void loadSourceImage(QPixmap* pixmap);
-    void loadDestinationImage(QPixmap* pixmap);
-    void loadDestinationImage(QImage);
     void setProgress(int);
     void setProgressMax(int);
     virtual void apply();
-
+    ImageWidget* getImageWidget(int index);
 signals:
     void finished();
 
