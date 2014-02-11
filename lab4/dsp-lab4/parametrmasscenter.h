@@ -7,7 +7,7 @@ class ParametrMassCenter : public BaseParametr
 {
 public:
     ParametrMassCenter();
-    virtual ParametrValue compute(label_t** map, int width, int height, label_t targetLabel);
+    static ParametrValue compute(label_t** map, int width, int height, label_t targetLabel);
 };
 
 #endif // PARAMETRMASSCENTER_H

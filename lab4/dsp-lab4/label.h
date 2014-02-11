@@ -8,6 +8,13 @@ struct label_t {
     bool operator==(label_t& operand) {
         return this->label == operand.label;
     }
+
+    bool operator!=(label_t& operand) {
+        return this->label != operand.label;
+    }
 };
+
+
+typedef uint32_t ClassID;
 
 #endif // LABEL_H

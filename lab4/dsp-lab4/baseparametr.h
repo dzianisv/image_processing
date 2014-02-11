@@ -13,7 +13,6 @@ class BaseParametr
 {
 public:
     BaseParametr();
-    virtual ParametrValue compute(label_t** map, int widht, int height, label_t target_label)=0;
 };
 
 #endif // BASEPARAMETR_H

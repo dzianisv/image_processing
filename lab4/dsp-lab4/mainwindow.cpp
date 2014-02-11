@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    action0Widget = new logfilter();
+    action0Widget = new ImageProcessing();
     connect(this->ui->actionOpen, SIGNAL(triggered()), this, SLOT(openImage()));
     connect( ImageContainer::getInstance(), SIGNAL(loaded(QPixmap*)),
             (action0Widget->imageWidgets), SLOT(setPixmap(QPixmap*)) );
